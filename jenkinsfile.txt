@@ -1,0 +1,35 @@
+pipeline
+{
+agent any
+stages
+{
+  stage('Build')
+  {
+    steps
+    {
+       bat 'echo %PATH%'
+       echo env.PATH
+    }
+  }
+  stage('Test')
+  {
+     steps
+    {
+       
+      echo 'basic test done'
+       
+      echo 'integration test done'
+      }
+     
+   }
+  stage('Verify')
+  {
+      steps
+    {
+      bat 'mvn verify'
+      echo 'verfication done'
+    }
+  }
+  
+}
+}
